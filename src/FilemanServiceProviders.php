@@ -19,8 +19,6 @@ class FilemanServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/config/fileman.php' => config_path('fileman.php')
         ], 'config');
-        
-       
     }
 
     public function register()
