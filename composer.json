@@ -24,7 +24,7 @@
                 "Dizytech\\Fileman\\FilemanServiceProvider"
             ],
             "aliases": {
-                "Debugbar": "Dizytech\\Fileman\\Facade\\Fileman"
+                "Fileman": "Dizytech\\Fileman\\Facade\\Fileman"
             }
         }
     }
