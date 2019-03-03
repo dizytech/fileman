@@ -1,0 +1,31 @@
+{
+    "name": "dizytech/fileman",
+    "description": "fileman provider",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "IT2MJS",
+            "email": "it2@mjsolusindo.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Dizytech\\Fileman\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3@dev"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dizytech\\Fileman\\FilemanServiceProvider"
+            ],
+            "aliases": {
+                "Debugbar": "Dizytech\\Fileman\\Facade\\Fileman"
+            }
+        }
+    }
+}
