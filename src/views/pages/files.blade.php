@@ -318,18 +318,18 @@
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
                         active: active,
                         pencarian: this.pencarian
                     })
-                }).then(response => response.json())
-                    .then(responseJson => {
-                        console.log(responseJson);
-                        this.files = responseJson;
-                        this.files_loading = false;
-                    })
+                })
+                .then(response => response.json())
+                .then(responseJson => {
+                    this.files = responseJson;
+                    this.files_loading = false;
+                })
             },
 
             loadFolder: function (active) {
@@ -338,17 +338,18 @@
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
                         active: active,
                         pencarian: this.pencarian
                     })
-                }).then(response => response.json())
-                    .then(responseJson => {
-                        this.folders = responseJson;
-                        this.folders_loading = false;
-                    })
+                })
+                .then(response => response.json())
+                .then(responseJson => {
+                    this.folders = responseJson;
+                    this.folders_loading = false;
+                })
             },
 
             loadBreadcrumb: function (active) {
@@ -366,7 +367,6 @@
                     .then(responseJson => {
                         this.breadcrumbs = responseJson;
                         this.breadcrumb_loading = false;
-                        console.log(this.breadcrumbs);
                     })
             },
 
@@ -403,8 +403,6 @@
                 }).then(responseJson => {
                     this.loadFolder(this.active);
                     this.folder_name = '';
-                }).catch(response => {
-                    console.log('a');
                 })
             },
 
@@ -462,8 +460,6 @@
                 }).then(responseJson => {
                     this.loadFolder(this.active);
                     this.loadFile(this.active);
-                }).catch(response => {
-                    console.log('a');
                 })
             },
 
@@ -489,8 +485,6 @@
                 }).then(responseJson => {
                     this.loadFolder(this.active);
                     this.loadFile(this.active);
-                }).catch(response => {
-                    console.log('a');
                 })
             },
 
@@ -509,7 +503,6 @@
                 $.each(fileList, (index, file) => {
                     this.file_to_upload.push({ file: file, progress: 0 });
                 })
-                console.log(this.file_to_upload);
             },
 
             removeFileToUpload: function (index) {
@@ -546,9 +539,6 @@
                         contentType: false,
                         enctype: 'multipart/form-data',
                         processData: false,
-                        success: function (data) {
-                            console.log('A');
-                        }
                     });
                 });
                 this.file_to_upload.push({});

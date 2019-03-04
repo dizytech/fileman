@@ -25,6 +25,7 @@
 <script src="/vendor/dizytech/fileman/js/jquery.min.js"></script>
 <script src="/vendor/dizytech/fileman/js/popper.min.js"></script>
 <script src="/vendor/dizytech/fileman/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 @include('fileman::pages.files')
 <script>
   const accessToken = '{{session()->get("fileman_token")}}';
